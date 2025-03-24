@@ -1,0 +1,42 @@
+
+---
+const testimonials = [
+  {
+    name: "carla Pérez",
+    company: "La Cocina de de las Delicias",
+    review: "Orderly's ha transformado completamente la manera en que gestionamos nuestro restaurante. La eficiencia ha aumentado significativamente.",
+    image: "/public/img/comentario1.webp"
+  },
+  {
+    name: "Carlos Rodríguez",
+    company: "Sabores del Valle",
+    review: "La integración de pagos y la gestión de pedidos es excepcional. Nuestros clientes están más satisfechos que nunca.",
+    image: "/public/img/comentario2.webp"
+  },
+  {
+    name: "María González",
+    company: "Fusion Gourmet",
+    review: "El análisis en tiempo real nos ha permitido tomar mejores decisiones y optimizar nuestras operaciones.",
+    image: "/public/img/comentario3.webp"
+  }
+];
+---
+<section id="Testimonies" class="bg-white dark:bg-gray-950 py-25">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-black dark:text-white">Lo Que Dicen Nuestros Clientes</h2>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 ">
+      {testimonials.map((testimonial) => (
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+          <img src={testimonial.image} alt={testimonial.name} class="w-20 h-20 mx-auto rounded-full" />
+          <div class="flex justify-center mt-3">
+            <span class="text-yellow-400 text-lg">★★★★★</span>
+          </div>
+          <p class="mt-4 text-gray-700 dark:text-gray-300">"{testimonial.review}"</p>
+          <h3 class="mt-4 font-bold text-black dark:text-white">{testimonial.name}</h3>
+          <p class="text-gray-500">{testimonial.company}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

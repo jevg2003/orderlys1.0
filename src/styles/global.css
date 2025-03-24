@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme{
+    --color-red-light: #DE1818;
+    --color-red-dark: #6F0C0C;
+}

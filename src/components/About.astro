@@ -1,0 +1,59 @@
+---
+const servicios = [
+  {
+    icono: "clipboard-list",
+    titulo: "Gestión de Pedidos",
+    descripcion: "Optimice la toma y gestión de pedidos en tiempo real, reduciendo errores y mejorando la eficiencia operativa.",
+  },
+  {
+    icono: "clock",
+    titulo: "Análisis en Tiempo Real",
+    descripcion: "Monitoree y analice sus operaciones en tiempo real para tomar decisiones estratégicas informadas.",
+  },
+  {
+    icono: "credit-card",
+    titulo: "Pagos Integrados",
+    descripcion: "Integre múltiples métodos de pago de forma segura y eficiente para una mejor experiencia del cliente.",
+  },
+];
+---
+
+<div id="About" class="bg-gray-100 dark:bg-gray-950 text-gray-900 dark:text-white py-20 transition-colors duration-300 pt-30">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-semibold text-center mb-8">¿Qué Hacemos?</h2>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {servicios.map((servicio) => (
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-15 shadow-md transition-transform transform hover:scale-105">
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 text-gray-900 dark:text-white">
+              {servicio.icono === "clipboard-list" && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                  <path d="M12 11h4"/>
+                  <path d="M12 16h4"/>
+                  <path d="M8 11h.01"/>
+                  <path d="M8 16h.01"/>
+                </svg>
+              )}
+              {servicio.icono === "clock" && (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M 12 2 C 6.48 2 2 6.48 2 12 C 2 17.52 6.48 22 12 22 C 17.52 22 22 17.52 22 12 C 22 6.48 17.52 2 12 2 z M 12 4 C 16.43 4 20 7.57 20 12 C 20 16.43 16.43 20 12 20 C 7.57 20 4 16.43 4 12 C 4 7.57 7.57 4 12 4 z M 11 6 L 11 12.414062 L 15.292969 16.707031 L 16.707031 15.292969 L 13 11.585938 L 13 6 L 11 6 z"/>
+                </svg>
+              )}
+              {servicio.icono === "credit-card" && (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+                  <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                </svg>
+              )}
+            </div>
+            <h3 class="text-xl font-semibold">{servicio.titulo}</h3>
+          </div>
+          <p class="mt-4 text-gray-600 dark:text-gray-300">{servicio.descripcion}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

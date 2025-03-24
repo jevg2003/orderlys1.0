@@ -1,0 +1,28 @@
+---
+const Metas = [
+  {
+    titulo: "Nuestra Misión",
+    descripcion: "Ofrecemos servicios de alta calidad al desarrollar una plataforma que implementa procesos más eficaces y reduce los costos operativos, impulsando la eficiencia y competitividad de nuestros clientes. Impulsamos la transformación digital en las pymes gastronómicas mediante una solución digital accesible que agiliza la gestión de pedidos, optimiza los cobros e integra diversos métodos de pago.",
+  },
+  {
+    titulo: "Nuestra Visión",
+    descripcion: "Para 2031, seremos la plataforma líder en gestión gastronómica en el Valle del Cauca, mejorando la experiencia del cliente y potenciando las facilidades para los restaurantes pymes, consolidándonos como referentes en innovación tecnológica y abriendo a los negocios a nuevas oportunidades para conectar con más clientes."
+  },
+];
+---
+
+<div id="AboutUs" class="bg-gray-100 border-gray-50-2 dark:bg-gray-950 text-gray-900 dark:text-white py-25 transition-colors duration-300">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {Metas.map((Metas) => (
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-15 shadow-md transition-transform transform hover:scale-105">
+          <div class="flex items-center gap-3">
+           
+            <h3 class="text-xl font-semibold">{Metas.titulo}</h3>
+          </div>
+          <p class="mt-4 text-gray-600 dark:text-gray-300">{Metas.descripcion}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

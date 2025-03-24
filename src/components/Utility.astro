@@ -1,0 +1,34 @@
+---
+const indicadores = [
+  { porcentaje: 98, texto: "Satisfacción del Cliente" },
+  { porcentaje: 40, texto: "Mejora en Eficiencia" },
+  { porcentaje: 65, texto: "Reducción de Errores" },
+  { porcentaje: 85, texto: "Retención de Clientes" },
+];
+---
+
+<div class="pb-10 pt-10 bg-gray-100 dark:bg-gray-950 transition-colors duration-300">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-gray-900 dark:text-white min-h-[400px] md:min-h-[500px] lg:min-h-[450px]">
+    {indicadores.map((item) => (
+      <div class="flex flex-col items-center justify-center h-full w-full">
+        <svg width="200" height="200">
+          <!-- Círculo de fondo -->
+          <circle cx="100" cy="100" r="90" stroke="currentColor" class="text-gray-300 dark:text-gray-700" stroke-width="15" fill="none"/>
+          
+          <!-- Barra de progreso -->
+          <circle cx="100" cy="100" r="90" stroke="currentColor" class="stroke-yellow-400 dark:stroke-red-500" stroke-width="15" fill="none" 
+                  stroke-dasharray="565" stroke-dashoffset={`calc(565 - (${item.porcentaje} * 565) / 100)`}
+                  class="progress-circle transition-all duration-500"/>
+          
+          <!-- Texto del porcentaje -->
+          <text x="100" y="110" text-anchor="middle" font-size="30" class="fill-black dark:fill-white font-bold">
+            {item.porcentaje}%
+          </text>
+        </svg>
+        <p class="mt-4 text-center w-full text-xl">{item.texto}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
+
