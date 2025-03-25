@@ -8,8 +8,17 @@ const {title = "Orderly's"} = Astro.props
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/orderlys1.0/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 		<title>{title}</title>
+		<script>
+			document.documentElement.classList.toggle(
+  				"dark",
+  				localStorage.theme === "dark" ||
+    			(!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
+			);
+			console.log("DEBUG: Tema inicial aplicado:", document.documentElement.classList.contains("dark")? "dark" : "light");
+
+		</script>
 	</head>
 	<body>
 		<slot />
