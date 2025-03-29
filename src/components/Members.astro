@@ -1,34 +1,39 @@
+---
+const members = [
+  {
+    name: "Nicolas Arbelaez",
+    img: "img/nicolas-profile.png",
+    alt: "Integrante 3",
+  },
+  {
+    name: "Jorge Enrique Velasquez",
+    img: "img/jorge-profile.png",
+    alt: "Integrante 2",
+  },
+  {
+    name: "Jonathan Alexander Escobar",
+    img: "img/jonathan-profile.png",
+    alt: "Integrante 1",
+  },
+];
+---
+
 <section class="py-16 bg-gray-100 dark:bg-gray-950 text-black dark:text-white transition-colors duration-300">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-8">Nuestro Equipo</h2>
-      
-      <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8 place-items-center">
-        
-        <!-- Integrante 1 -->
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8">Nuestro Equipo</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8 place-items-center">
+      {members.map((member) => (
         <div class="relative w-56 h-56 sm:w-64 sm:h-64">
-          <img src="img/nicolas-profile.png" alt="Integrante 1" class="w-full h-full object-cover rounded-lg">
+          <img
+            src={member.img}
+            alt={member.alt}
+            class="w-full h-full object-cover rounded-lg"
+          />
           <div class="absolute bottom-0 right-0 bg-black/80 text-white text-sm font-semibold px-4 py-2 rounded-tl-lg">
-            Jonathan Alexander Escobar
+            {member.name}
           </div>
         </div>
-  
-        <!-- Integrante 2 -->
-        <div class="relative w-56 h-56 sm:w-64 sm:h-64">
-          <img src="img/jorge-profile.png" alt="Integrante 2" class="w-full h-full object-cover rounded-lg">
-          <div class="absolute bottom-0 right-0 bg-black/80 text-white text-sm font-semibold px-4 py-2 rounded-tl-lg">
-            Jorge Enrique Velasquez
-          </div>
-        </div>
-  
-        <!-- Integrante 3 -->
-        <div class="relative w-56 h-56 sm:w-64 sm:h-64">
-          <img src="img/jonathan-profile.png" alt="Integrante 3" class="w-full h-full object-cover rounded-lg">
-          <div class="absolute bottom-0 right-0 bg-black/80 text-white text-sm font-semibold px-4 py-2 rounded-tl-lg">
-            Nicolas Arbelaez
-          </div>
-        </div>
-  
-      </div>
+      ))}
     </div>
-  </section>
-  
+  </div>
+</section>
